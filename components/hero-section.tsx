@@ -106,7 +106,7 @@ export function HeroSection() {
           </div>
 
           {/* Right - 3D Globe */}
-          <div className="hidden lg:flex items-center justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex items-center justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <div className="relative w-full max-w-lg">
               {/* Teal glow behind globe */}
               <div

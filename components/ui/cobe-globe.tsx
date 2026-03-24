@@ -239,6 +239,36 @@ export function Globe({
           touchAction: "none",
         }}
       />
+      {markers.map((m) => (
+        <div
+          key={m.id}
+          style={{
+            position: "absolute",
+            // @ts-expect-error CSS Anchor Positioning
+            positionAnchor: `--cobe-${m.id}`,
+            bottom: "anchor(top)",
+            left: "anchor(center)",
+            translate: "-50% 0",
+            marginBottom: 8,
+            padding: "3px 8px",
+            background: "rgba(32, 201, 201, 0.15)",
+            border: "1px solid rgba(32, 201, 201, 0.3)",
+            borderRadius: "6px",
+            color: "#20c9c9",
+            fontFamily: "var(--font-poppins), sans-serif",
+            fontSize: "0.6rem",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase" as const,
+            whiteSpace: "nowrap" as const,
+            pointerEvents: "none" as const,
+            opacity: `var(--cobe-visible-${m.id}, 0)`,
+            filter: `blur(calc((1 - var(--cobe-visible-${m.id}, 0)) * 8px))`,
+            transition: "opacity 0.8s, filter 0.8s",
+          }}
+        >
+          {m.label}
+        </div>
+      ))}
     </div>
   )
 }
