@@ -1,6 +1,7 @@
 'use client';
 
 import { Navigation } from '@/components/navigation';
+import { CinematicHero } from '@/components/ui/cinematic-hero';
 import { HeroSection } from '@/components/hero-section';
 import { PortfolioGrid } from '@/components/portfolio-grid';
 import { AboutSection } from '@/components/about-section';
@@ -13,6 +14,7 @@ import { Footer } from '@/components/footer';
 export default function Home() {
   return (
     <>
+      <CinematicHero />
       <Navigation />
       <main>
         <HeroSection />
