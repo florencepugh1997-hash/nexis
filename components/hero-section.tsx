@@ -11,29 +11,34 @@ const Globe = dynamic(() => import('@/components/ui/cobe-globe').then(mod => ({ 
 });
 
 const markers = [
-  { id: "lagos", location: [6.5244, 3.3792] as [number, number], label: "Lagos" },
-  { id: "nyc", location: [40.7128, -74.006] as [number, number], label: "New York" },
-  { id: "london", location: [51.5074, -0.1278] as [number, number], label: "London" },
-  { id: "dubai", location: [25.2048, 55.2708] as [number, number], label: "Dubai" },
-  { id: "tokyo", location: [35.6762, 139.6503] as [number, number], label: "Tokyo" },
-  { id: "sydney", location: [-33.8688, 151.2093] as [number, number], label: "Sydney" },
+  { id: "design", location: [6.5244, 3.3792] as [number, number], label: "Web Design" },
+  { id: "branding", location: [40.7128, -74.006] as [number, number], label: "Branding" },
+  { id: "motion", location: [51.5074, -0.1278] as [number, number], label: "Motion Graphics" },
+  { id: "dev", location: [25.2048, 55.2708] as [number, number], label: "Development" },
+  { id: "uiux", location: [35.6762, 139.6503] as [number, number], label: "UI/UX" },
+  { id: "strategy", location: [-33.8688, 151.2093] as [number, number], label: "Digital Strategy" },
 ];
 
 const arcs = [
   {
-    id: "lagos-london",
+    id: "design-motion",
     from: [6.5244, 3.3792] as [number, number],
     to: [51.5074, -0.1278] as [number, number],
   },
   {
-    id: "lagos-nyc",
+    id: "design-branding",
     from: [6.5244, 3.3792] as [number, number],
     to: [40.7128, -74.006] as [number, number],
   },
   {
-    id: "london-dubai",
+    id: "motion-dev",
     from: [51.5074, -0.1278] as [number, number],
     to: [25.2048, 55.2708] as [number, number],
+  },
+  {
+    id: "dev-uiux",
+    from: [25.2048, 55.2708] as [number, number],
+    to: [35.6762, 139.6503] as [number, number],
   },
 ];
 
