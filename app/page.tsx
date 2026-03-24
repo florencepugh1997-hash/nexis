@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Navigation } from '@/components/navigation';
 import { CinematicHero } from '@/components/ui/cinematic-hero';
 import { HeroSection } from '@/components/hero-section';
@@ -12,20 +13,36 @@ import { CTASection } from '@/components/cta-section';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
+  const [showOnboarding, setShowOnboarding] = useState(true);
+
+  useEffect(() => {
+    const hasSeen = localStorage.getItem('onboarding_seen');
+    if (hasSeen) {
+      setShowOnboarding(false);
+    }
+  }, []);
+
+  const handleComplete = () => {
+    setShowOnboarding(false);
+    localStorage.setItem('onboarding_seen', 'true');
+  };
+
   return (
     <>
-      <CinematicHero />
-      <Navigation />
-      <main>
-        <HeroSection />
-        <PortfolioGrid />
-        <AboutSection />
-        <MissionVision />
-        <TechTools />
-        <FAQSection />
-        <CTASection />
-      </main>
-      <Footer />
+      {showOnboarding && <CinematicHero onComplete={handleComplete} />}
+      <div className={showOnboarding ? "opacity-0 invisible h-screen overflow-hidden" : "opacity-100 visible transition-all duration-1000 ease-in-out"}>
+        <Navigation />
+        <main>
+          <HeroSection />
+          <PortfolioGrid />
+          <AboutSection />
+          <MissionVision />
+          <TechTools />
+          <FAQSection />
+          <CTASection />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
