@@ -281,17 +281,7 @@ export function CinematicHero({
     }, [metricValue]);
 
     const handleExplore = () => {
-        const tl = gsap.timeline({
-            onComplete: () => onComplete?.()
-        });
-
-        tl.to(containerRef.current, {
-            y: "-100%",
-            duration: 1.2,
-            ease: "expo.inOut",
-            filter: "blur(20px)",
-            autoAlpha: 0
-        });
+        onComplete?.();
     };
 
     return (

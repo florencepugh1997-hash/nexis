@@ -29,20 +29,23 @@ export default function Home() {
 
   return (
     <>
-      {showOnboarding && <CinematicHero onComplete={handleComplete} />}
-      <div className={showOnboarding ? "opacity-0 invisible h-screen overflow-hidden" : "opacity-100 visible transition-all duration-1000 ease-in-out"}>
-        <Navigation />
-        <main>
-          <HeroSection />
-          <PortfolioGrid />
-          <AboutSection />
-          <MissionVision />
-          <TechTools />
-          <FAQSection />
-          <CTASection />
-        </main>
-        <Footer />
-      </div>
+      {showOnboarding ? (
+        <CinematicHero onComplete={handleComplete} />
+      ) : (
+        <div className="animate-in fade-in duration-1000">
+          <Navigation />
+          <main>
+            <HeroSection />
+            <PortfolioGrid />
+            <AboutSection />
+            <MissionVision />
+            <TechTools />
+            <FAQSection />
+            <CTASection />
+          </main>
+          <Footer />
+        </div>
+      )}
     </>
   );
 }
