@@ -263,14 +263,16 @@ export function CinematicHero({
                 .fromTo(".card-left-text", { x: -50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, ease: "power4.out", duration: 1.2 }, "-=1.2")
                 .fromTo(".card-right-text", { x: 50, autoAlpha: 0, scale: 0.8 }, { x: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 1.2 }, "<")
                 .set(".hero-text-wrapper", { autoAlpha: 0 }, ">")
-                .to(".cta-wrapper", { autoAlpha: 1, scale: 1, filter: "blur(0px)", ease: "expo.out", duration: 1.5 }, ">-0.5")
+                .to(".cta-wrapper", { autoAlpha: 1, scale: 1, filter: "blur(0px)", ease: "expo.out", duration: 1.2 }, ">-0.2")
                 .to(".main-card", {
                     width: isMobile ? "92vw" : "85vw",
                     height: isMobile ? "92vh" : "85vh",
                     borderRadius: isMobile ? "32px" : "40px",
+                    opacity: 0.15, // Dim the card to highlight CTA
                     ease: "expo.inOut",
                     duration: 1.5
-                }, "pullback");
+                }, "pullback")
+                .to({}, { duration: 2 }); // BUFFER AT THE END TO PREVENT BLACK SCREEN
 
 
         }, containerRef);
@@ -313,8 +315,8 @@ export function CinematicHero({
                 </h1>
             </div>
 
-            {/* BACKGROUND LAYER 2: Tactile CTA Buttons */}
-            <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 gsap-reveal pointer-events-auto will-change-transform">
+            {/* BACKGROUND LAYER 2: Tactile CTA Buttons - MOVED TO TOP LAYER */}
+            <div className="cta-wrapper absolute z-50 flex flex-col items-center justify-center text-center w-screen px-4 gsap-reveal pointer-events-auto will-change-transform">
                 <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-silver-matte">
                     {ctaHeading}
                 </h2>
