@@ -8,6 +8,7 @@ import { MissionVision } from '@/components/mission-vision';
 import { TechTools } from '@/components/tech-tools';
 import { FAQSection } from '@/components/faq-section';
 import { CTASection } from '@/components/cta-section';
+import { BlogSection } from '@/components/blog-section';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <MissionVision />
         <TechTools />
         <FAQSection />
+        <BlogSection />
         <CTASection />
       </main>
       <Footer />

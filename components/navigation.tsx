@@ -43,6 +43,7 @@ export function Navigation() {
             <Link href="/about" className="text-foreground/70 hover:text-accent transition-colors text-sm font-medium">About</Link>
             <Link href="/services" className="text-foreground/70 hover:text-accent transition-colors text-sm font-medium">Services</Link>
             <Link href="/courses" className="text-foreground/70 hover:text-accent transition-colors text-sm font-medium">Digital Course</Link>
+            <Link href="/blog" className="text-foreground/70 hover:text-accent transition-colors text-sm font-medium">Blog</Link>
             <Link href="/contact" className="text-foreground/70 hover:text-accent transition-colors text-sm font-medium">Contact Us</Link>
           </div>
 
@@ -79,6 +80,7 @@ export function Navigation() {
           <Link href="/about" onClick={closeMobileMenu} className="text-lg font-medium text-foreground hover:text-accent transition-colors">About</Link>
           <Link href="/services" onClick={closeMobileMenu} className="text-lg font-medium text-foreground hover:text-accent transition-colors">Services</Link>
           <Link href="/courses" onClick={closeMobileMenu} className="text-lg font-medium text-foreground hover:text-accent transition-colors">Digital Course</Link>
+          <Link href="/blog" onClick={closeMobileMenu} className="text-lg font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
           <Link href="/contact" onClick={closeMobileMenu} className="text-lg font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
 
           <div className="pt-6 border-t border-border">
