@@ -33,7 +33,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" onClick={closeMobileMenu} className="flex items-center gap-2 hover:opacity-80 transition-opacity z-50">
-            <Image src="/nexora.png" alt="nexis logo" width={32} height={32} className="object-contain" />
+            <Image src="/nexislogo2.png" alt="nexis logo" width={32} height={32} className="object-contain" />
             <span className="text-xl font-semibold text-accent lowercase tracking-wide">nexis</span>
           </Link>
 
